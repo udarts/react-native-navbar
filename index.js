@@ -13,6 +13,7 @@ import styles from './styles';
 
 const ButtonShape = {
   title: PropTypes.string.isRequired,
+  icon: PropTypes.string,
   style: ViewPropTypes.style,
   handler: PropTypes.func,
   disabled: PropTypes.bool,
@@ -39,6 +40,7 @@ function getButtonElement(data, style) {
       {(!data || data.props) ? data : (
         <NavbarButton
           title={data.title}
+          icon={data.icon}
           style={[data.style, style]}
           tintColor={data.tintColor}
           handler={data.handler}
